@@ -11,7 +11,7 @@ import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { readTsConfig } from '@nrwl/workspace';
 import { BuildBuilderOptions } from './types';
 
-export const OUT_FILENAME = 'main.js';
+
 
 export function getBaseWebpackPartial(
   options: BuildBuilderOptions
@@ -30,7 +30,7 @@ export function getBaseWebpackPartial(
     mode: options.optimization ? 'production' : 'development',
     output: {
       path: options.outputPath,
-      filename: OUT_FILENAME
+      filename: options.outputFilename || 'main.js'
     },
     module: {
       rules: [

@@ -20,6 +20,7 @@ export interface SourceMapOptions {
 export interface BuildBuilderOptions {
   main: string;
   outputPath: string;
+  outputFilename?: string;
   tsConfig: string;
   watch?: boolean;
   sourceMap?: boolean | SourceMapOptions;

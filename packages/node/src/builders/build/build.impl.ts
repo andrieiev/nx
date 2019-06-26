@@ -7,7 +7,6 @@ import { writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { map, concatMap } from 'rxjs/operators';
 import { getNodeWebpackConfig } from '../../utils/node.config';
-import { OUT_FILENAME } from '../../utils/config';
 import { BuildBuilderOptions } from '../../utils/types';
 import { normalizeBuildOptions } from '../../utils/normalize';
 import { NodeJsSyncHost } from '@angular-devkit/core/node';
@@ -64,7 +63,7 @@ function run(
       buildEvent.outfile = resolve(
         context.workspaceRoot,
         options.outputPath,
-        OUT_FILENAME
+        (options.outputFilename || 'main.js')
       );
       return buildEvent as NodeBuildEvent;
     })

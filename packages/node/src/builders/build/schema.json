@@ -7,6 +7,10 @@
       "type": "string",
       "description": "The name of the main entry-point file."
     },
+    "outputFilename": {
+      "type": "string",
+      "description": "The name of the main entry-point file after build."
+    },
     "tsConfig": {
       "type": "string",
       "description": "The name of the Typescript configuration file."

@@ -30,6 +30,12 @@ describe('getBaseWebpackPartial', () => {
 
       expect(result.output.filename).toEqual('main.js');
     });
+    it('should have custom output filename', () => {
+      input.outputFilename = 'custom-main.js';
+      const result = getBaseWebpackPartial(input);
+
+      expect(result.output.filename).toEqual('custom-main.js');
+    });
 
     it('should have output path', () => {
       const result = getBaseWebpackPartial(input);
